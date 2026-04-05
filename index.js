@@ -4,10 +4,19 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-// Configuración de CORS
+// Configuración de CORS for local
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true,
+//   }),
+// );
+
+// Configuración de CORS para Producción
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),
